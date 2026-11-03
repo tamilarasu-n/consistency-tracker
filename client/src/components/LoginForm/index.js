@@ -186,20 +186,20 @@ class LoginForm extends Component {
 
     // Render Input Fields
     renderEmailField = () => {
-        const { error } = this.state;
+        const { error, email } = this.state;
         const emailError = error.email;
 
         return (
             <>
                 <label htmlFor="email" className="form-label">EMAIL</label>
-                <input id="email"  className="form-input" type="email" placeholder="name@example.com" onChange={this.handleInputChange} onBlur={this.handleInputBlur} />
+                <input value={email} id="email"  className="form-input" type="email" placeholder="name@example.com" onChange={this.handleInputChange} onBlur={this.handleInputBlur} />
                 {emailError && <p className="form-err-msg">{emailError}</p>}
             </>
         );
     }
 
     renderPasswordField = () => {
-        const { error } = this.state;
+        const { error, password } = this.state;
         const passwordError = error.password;
 
         return (
@@ -208,7 +208,7 @@ class LoginForm extends Component {
                     <label htmlFor="password" className="form-label">PASSWORD</label>
                     {/* <a href="#" className="forgot-password-link">FORGOT?</a> */}
                 </div>
-                <input id="password" className="form-input" type="password" placeholder="••••••••" onChange={this.handleInputChange} onBlur={this.handleInputBlur} />
+                <input value={password} id="password" className="form-input" type="password" placeholder="••••••••" onChange={this.handleInputChange} onBlur={this.handleInputBlur} />
                 {passwordError && <p className="form-err-msg">{passwordError}</p>}
             </>
 
